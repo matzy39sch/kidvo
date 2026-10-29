@@ -1,0 +1,25 @@
+{
+  "id": "workshop-of-why",
+  "name": "Workshop of Why",
+  "description": "Explore light and water. Check the practice AI’s answers against clues.",
+  "author": { "name": "Matyas Szabo" },
+  "type": "window",
+  "window": { "width": 940, "height": 740 },
+  "color": "#e8d3ad",
+  "icon": "icon.svg",
+  "bands": ["explorers", "investigators"],
+  "skills": ["ai-can-be-wrong", "when-to-ask"],
+  "languages": ["en", "hu", "ro"],
+  "translations": {
+    "hu": {
+      "name": "Miértek műhelye",
+      "description": "Fedezd fel a fényt és a vizet! Ellenőrizd a gyakorló AI válaszait a támpontok alapján!"
+    },
+    "ro": {
+      "name": "Atelierul întrebărilor",
+      "description": "Explorează lumina și apa. Verifică răspunsurile AI folosind indiciile."
+    }
+  },
+  "tags": ["game", "science"],
+  "added": "2026-10-28"
+}

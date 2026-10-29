@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' https://kidvo.eu data: blob:; script-src 'self' https://kidvo.eu 'unsafe-inline'; style-src 'self' https://kidvo.eu 'unsafe-inline'; img-src 'self' https://kidvo.eu data: blob:; media-src 'self' https://kidvo.eu data: blob:; font-src 'self' https://kidvo.eu data:; connect-src 'self' https://kidvo.eu; form-action 'none'; base-uri 'none'">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Workshop of Why</title>
+<link rel="stylesheet" href="style.css">
+<script src="../../shell/sdk.js"></script>
+<script src="../../shell/ask-ai.js"></script>
+<script src="lang/en.js"></script>
+<script src="lang/hu.js"></script>
+<script src="lang/ro.js"></script>
+<script src="lessons.js"></script>
+</head>
+<body>
+<header class="top"><strong id="title"></strong><div><button id="doors-button" type="button"></button><button id="restart" type="button"></button></div></header>
+<section id="hub" aria-labelledby="hub-title"><h1 id="hub-title"></h1><div id="door-list"></div></section>
+<main id="investigation" hidden>
+  <section class="room" aria-labelledby="room-label">
+    <p id="room-label" class="room-label"></p>
+    <div id="board" class="board" data-focus="" data-air="false">
+      <svg class="scenery" viewBox="0 0 960 540" aria-hidden="true">
+        <defs>
+          <pattern id="wood" width="120" height="32" patternUnits="userSpaceOnUse"><rect width="120" height="32" fill="#c68e5b"/><path d="M0 31H120M18 8h28m32 12h25" stroke="#ad7548" stroke-width="2"/></pattern>
+          <pattern id="wall" width="32" height="32" patternUnits="userSpaceOnUse"><rect width="32" height="32" fill="#f3e3bd"/><circle cx="5" cy="6" r="1" fill="#ddcba5"/></pattern>
+        </defs>
+        <rect width="960" height="540" fill="url(#wall)"/>
+        <path d="M0 0H960V28H0ZM0 0H26V420H0ZM934 0H960V420H934Z" fill="#755043"/>
+        <path d="M0 424H960V540H0Z" fill="url(#wood)"/>
+        <path d="M0 470H960M0 516H960M120 424v46m165 0v46m220-92v46m180 0v46m150-92v46" stroke="#9a6949" stroke-width="3"/>
+        <!-- The window and its daylight. -->
+        <rect x="62" y="67" width="245" height="242" rx="8" fill="#8c6147" stroke="#473e40" stroke-width="6"/>
+        <rect x="79" y="84" width="211" height="207" fill="#85c9e4"/>
+        <circle cx="121" cy="119" r="22" fill="#ffe292"/>
+        <path d="M204 129c-17-29-49-7-42 9h88c9-19-18-32-29-16-3-9-11-13-17-12Z" fill="#fff9e5"/>
+        <path d="M79 260c55-43 113-9 211-38v69H79Z" fill="#86a98a"/>
+        <path d="M183 84v207M79 191h211" stroke="#8c6147" stroke-width="12"/>
+        <rect x="47" y="302" width="276" height="17" rx="4" fill="#72513f"/>
+        <g class="daylight" fill="#fffdf3"><path d="M96 277L143 453H238L174 277Z" opacity=".8"/><path d="M136 450h107l13 29H145Z" stroke="#ad9d82" stroke-width="3"/></g>
+        <!-- Original craftsperson Mira, with an ochre apron and dark bun. -->
+        <g transform="translate(-45 0)">
+        <ellipse cx="380" cy="470" rx="70" ry="13" fill="#8a634e" opacity=".23"/>
+        <path d="M346 390l-8 75h27l15-63 13 63h26l-8-80" fill="#40576a" stroke="#473e40" stroke-width="5"/>
+        <path d="M324 296q52-35 104 0l16 107H311Z" fill="#547d89" stroke="#473e40" stroke-width="5"/>
+        <path d="M350 289l12 28h36l10-28 9 111h-73Z" fill="#e8b657" stroke="#473e40" stroke-width="4"/>
+        <rect x="357" y="349" width="45" height="28" rx="5" fill="#cb9143"/>
+        <path d="M324 309l-20 52 22 10 22-49m79-12 28 39-17 18-30-39" fill="#dcad8d" stroke="#473e40" stroke-width="5" stroke-linejoin="round"/>
+        <circle cx="419" cy="213" r="24" fill="#473e40"/>
+        <path d="M337 232q0-55 48-55 46 0 46 55v30h-94Z" fill="#473e40"/>
+        <ellipse cx="383" cy="248" rx="41" ry="45" fill="#e5b99a" stroke="#473e40" stroke-width="4"/>
+        <path d="M341 235C342 211 359 198 381 198C404 198 423 210 425 235C410 232 401 221 396 213C380 229 361 235 341 235Z" fill="#473e40"/>
+        <circle cx="368" cy="247" r="4" fill="#473e40"/><circle cx="398" cy="247" r="4" fill="#473e40"/>
+        <path d="M374 270q11 8 23-1" fill="none" stroke="#85584b" stroke-width="4" stroke-linecap="round"/>
+        </g>
+        <!-- Bench, tools, books and a labelled-by-UI mirror. -->
+        <rect x="470" y="384" width="421" height="27" rx="7" fill="#a56743" stroke="#473e40" stroke-width="5"/>
+        <path d="M496 411v102h29l10-102m301 0 10 102h29V411" fill="#91603f" stroke="#473e40" stroke-width="5"/>
+        <rect x="566" y="421" width="214" height="72" rx="7" fill="#b77c50" stroke="#72503e" stroke-width="4"/>
+        <path d="M673 424v67" stroke="#72503e" stroke-width="4"/><circle cx="655" cy="454" r="5" fill="#f4d28e"/><circle cx="692" cy="454" r="5" fill="#f4d28e"/>
+        <rect x="714" y="62" width="153" height="194" rx="26" fill="#c49558" stroke="#473e40" stroke-width="5"/>
+        <rect x="729" y="78" width="123" height="163" rx="19" fill="#c9e3df"/>
+        <path d="M743 210l89-103m-66 116 61-69" stroke="#f8ffef" stroke-width="11" opacity=".7"/>
+        <rect x="482" y="77" width="164" height="100" rx="6" fill="#bc9568" stroke="#765c48" stroke-width="4"/>
+        <path d="M508 99v52m-12-48h25m37-7v55m-14-47h30m35-10v55" stroke="#6b6e65" stroke-width="8" stroke-linecap="round"/>
+        <rect x="752" y="351" width="80" height="15" fill="#7693a1"/><rect x="742" y="366" width="103" height="14" fill="#d4a552"/>
+        <path d="M514 374l27-20 45 17-19 11" fill="#f6efcc" stroke="#9d8668" stroke-width="3"/>
+        <g class="mirror-light" fill="none" stroke="#fff2a6" stroke-width="10" stroke-linejoin="round"><path d="M290 95L790 168 644 384"/><path d="M644 362v22l21-6" stroke-width="5"/></g>
+        <g class="vision-light" fill="none" stroke="#e8bc5d" stroke-width="5" stroke-linecap="round"><path d="M644 384L353 247M644 384l-80-103m80 103 15-103m-15 103 111-70"/><path d="M367 247h-14l6 13m204 34 1-13 13 5m73 7 9-12 6 13m76 29 14-9-16-1" stroke-width="3"/></g>
+        <!-- The prism separates the existing colours of a white beam. -->
+        <g class="prism-light"><path d="M289 94L568 342" stroke="#fffde7" stroke-width="18" opacity=".9"/>
+          <path d="M607 344l187-48" stroke="#db6673"/><path d="M608 347l190-31" stroke="#e7a35d"/><path d="M608 350l194-12" stroke="#e4cd62"/><path d="M608 353l196 8" stroke="#80b684"/><path d="M608 356l193 28" stroke="#69aecd"/><path d="M608 359l188 47" stroke="#7877b7"/><path d="M608 362l180 65" stroke="#ac7cbb"/>
+        </g>
+        <path d="M563 375l35-77 40 77Z" fill="#cce6e7" fill-opacity=".75" stroke="#496a78" stroke-width="5" stroke-linejoin="round"/>
+        <path d="M598 298v77" stroke="#8cb5c2" stroke-width="3"/>
+        <!-- A simple teaching diagram, not measured ray counts. -->
+        <g class="air-light" fill="none" stroke-linecap="round"><path d="M112 128l66 45 60 10m-60-10-25 52m25-52 53-28m-53 28 20 77m-20-77-65 36" stroke="#397cab" stroke-width="6"/><path d="M105 142l77 49 51 37" stroke="#d76c64" stroke-width="5"/></g>
+        <g class="basin-prop"><path d="M620 342h245l-30 48H650Z" fill="#cedee3" stroke="#496a78" stroke-width="4"/><ellipse cx="742" cy="340" rx="123" ry="25" fill="#a6d8e9" stroke="#496a78" stroke-width="5"/><ellipse cx="742" cy="341" rx="18" ry="7" fill="#496a78"/></g>
+      </svg>
+      <button id="bird" class="bird" type="button" style="left:47%;top:80%">
+        <svg viewBox="0 0 72 72" aria-hidden="true"><ellipse cx="35" cy="64" rx="25" ry="5" fill="#473e40" opacity=".18"/><path d="M7 51l13-27 25 1 16 24-25 13Z" fill="#65bdbe" stroke="#294f5a" stroke-width="3" stroke-linejoin="round"/><path d="M20 24l16 26L7 51m29-1 9-25 16 24Z" fill="#9ed9ce" stroke="#294f5a" stroke-width="2"/><path d="M48 29l19 8-14 8Z" fill="#edbd63" stroke="#294f5a" stroke-width="2"/><circle cx="46" cy="31" r="3.5" fill="#294f5a"/><path d="M7 51L2 34l18 7" fill="#65bdbe" stroke="#294f5a" stroke-width="2"/></svg>
+      </button>
+      <section id="basin-panel" hidden aria-labelledby="basin-label">
+        <div class="basin-picture"><strong id="basin-label" data-label></strong>
+        <svg viewBox="0 0 200 140" aria-hidden="true" class="basin-view"><ellipse cx="100" cy="70" rx="65" ry="60" fill="#d9e6ea" stroke="#496a78" stroke-width="4"/><ellipse class="basin-water" cx="100" cy="70" rx="57" ry="52" fill="#99d4e6"/><circle cx="100" cy="70" r="8" fill="#496a78"/><path d="M155 70a55 50 0 1 1-55-50" fill="none" stroke="#649bb0" stroke-width="2" stroke-dasharray="4 5"/><circle data-drop cx="148" cy="70" r="6" fill="#a75529"/><text x="100" y="82" text-anchor="middle" class="basin-arrow" font-size="44" fill="#2f5969">↻</text></svg>
+        <button id="basin-close" type="button"></button></div>
+        <div class="basin-controls"><button type="button" data-action="cw"></button><button type="button" data-action="ccw"></button><button type="button" data-action="drain"></button><button type="button" data-action="refill"></button></div>
+        <div class="basin-readout"><div data-status aria-live="polite"></div><div data-trials></div></div>
+      </section>
+    </div>
+    <p id="objective" class="objective" aria-live="polite"></p>
+  </section>
+  <section id="conversation" aria-label="Conversation"></section>
+</main>
+<script src="basin.js"></script>
+<script src="engine.js"></script>
+<script src="game.js"></script>
+</body>
+</html>

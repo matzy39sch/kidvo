@@ -1,0 +1,361 @@
+{
+  "version": 2,
+  "id": "whirlpool",
+  "title": "whirl_title",
+  "summary": "whirl_summary",
+  "steps": [
+    {
+      "id": "initial-push",
+      "place": "basin",
+      "prompt": "whirl_s1_q",
+      "choices": [
+        {
+          "label": "whirl_s1_c0",
+          "correct": false
+        },
+        {
+          "label": "whirl_s1_c1",
+          "correct": true
+        }
+      ],
+      "reply": "whirl_s1_reply",
+      "guide": {
+        "prompt": "whirl_s1_gq",
+        "hint": "whirl_s1_gh",
+        "choices": [
+          {
+            "label": "whirl_s1_g_c0",
+            "correct": true
+          },
+          {
+            "label": "whirl_s1_g_c1",
+            "correct": false
+          }
+        ]
+      },
+      "ai": {
+        "kind": "partial",
+        "place": "basin",
+        "text": "whirl_s1_ai",
+        "coach": "whirl_s1_coach",
+        "prompt": "whirl_s1_check",
+        "hint": "whirl_s1_hint",
+        "reply": "whirl_s1_checked",
+        "choices": [
+          {
+            "label": "whirl_s1_a_c0",
+            "correct": true
+          },
+          {
+            "label": "whirl_s1_a_c1",
+            "correct": false
+          }
+        ]
+      },
+      "scene": "still"
+    },
+    {
+      "id": "stir-clockwise",
+      "place": "basin",
+      "scene": "draining",
+      "experiment": "cw",
+      "prompt": "whirl_s2_q",
+      "choices": [
+        {
+          "label": "whirl_s2_c0",
+          "correct": true
+        },
+        {
+          "label": "whirl_s2_c1",
+          "correct": false
+        }
+      ],
+      "reply": "whirl_s2_reply",
+      "guide": {
+        "prompt": "whirl_s2_gq",
+        "hint": "whirl_s2_gh",
+        "choices": [
+          {
+            "label": "whirl_s2_g_c0",
+            "correct": false
+          },
+          {
+            "label": "whirl_s2_g_c1",
+            "correct": true
+          }
+        ]
+      },
+      "ai": {
+        "kind": "wrong",
+        "place": "basin",
+        "text": "whirl_s2_ai",
+        "coach": "whirl_s2_coach",
+        "prompt": "whirl_s2_check",
+        "hint": "whirl_s2_hint",
+        "reply": "whirl_s2_checked",
+        "choices": [
+          {
+            "label": "whirl_s2_a_c0",
+            "correct": false
+          },
+          {
+            "label": "whirl_s2_a_c1",
+            "correct": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "stir-counterclockwise",
+      "place": "basin",
+      "scene": "draining",
+      "experiment": "ccw",
+      "prompt": "whirl_s3_q",
+      "choices": [
+        {
+          "label": "whirl_s3_c0",
+          "correct": false
+        },
+        {
+          "label": "whirl_s3_c1",
+          "correct": true
+        }
+      ],
+      "reply": "whirl_s3_reply",
+      "guide": {
+        "prompt": "whirl_s3_gq",
+        "hint": "whirl_s3_gh",
+        "choices": [
+          {
+            "label": "whirl_s3_g_c0",
+            "correct": true
+          },
+          {
+            "label": "whirl_s3_g_c1",
+            "correct": false
+          }
+        ]
+      },
+      "ai": {
+        "kind": "complete",
+        "place": "basin",
+        "text": "whirl_s3_ai",
+        "coach": "whirl_s3_coach",
+        "prompt": "whirl_s3_check",
+        "hint": "whirl_s3_hint",
+        "reply": "whirl_s3_checked",
+        "choices": [
+          {
+            "label": "whirl_s3_a_c0",
+            "correct": false
+          },
+          {
+            "label": "whirl_s3_a_c1",
+            "correct": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "compare-directions",
+      "place": "basin",
+      "scene": "draining",
+      "experiment": "both",
+      "prompt": "whirl_s4_q",
+      "choices": [
+        {
+          "label": "whirl_s4_c0",
+          "correct": false
+        },
+        {
+          "label": "whirl_s4_c1",
+          "correct": true
+        },
+        {
+          "label": "whirl_s4_c2",
+          "correct": false
+        }
+      ],
+      "reply": "whirl_s4_reply",
+      "guide": {
+        "prompt": "whirl_s4_gq",
+        "hint": "whirl_s4_gh",
+        "choices": [
+          {
+            "label": "whirl_s4_g_c0",
+            "correct": false
+          },
+          {
+            "label": "whirl_s4_g_c1",
+            "correct": true
+          }
+        ]
+      },
+      "ai": {
+        "kind": "wrong",
+        "place": "basin",
+        "text": "whirl_s4_ai",
+        "coach": "whirl_s4_coach",
+        "prompt": "whirl_s4_check",
+        "hint": "whirl_s4_hint",
+        "reply": "whirl_s4_checked",
+        "choices": [
+          {
+            "label": "whirl_s4_a_c0",
+            "correct": true
+          },
+          {
+            "label": "whirl_s4_a_c1",
+            "correct": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "inward-speedup",
+      "place": "basin",
+      "scene": "draining",
+      "prompt": "whirl_s5_q",
+      "choices": [
+        {
+          "label": "whirl_s5_c0",
+          "correct": true
+        },
+        {
+          "label": "whirl_s5_c1",
+          "correct": false
+        },
+        {
+          "label": "whirl_s5_c2",
+          "correct": false
+        }
+      ],
+      "reply": "whirl_s5_reply",
+      "guide": {
+        "prompt": "whirl_s5_gq",
+        "hint": "whirl_s5_gh",
+        "choices": [
+          {
+            "label": "whirl_s5_g_c0",
+            "correct": true
+          },
+          {
+            "label": "whirl_s5_g_c1",
+            "correct": false
+          }
+        ]
+      },
+      "ai": {
+        "kind": "partial",
+        "place": "basin",
+        "text": "whirl_s5_ai",
+        "coach": "whirl_s5_coach",
+        "prompt": "whirl_s5_check",
+        "hint": "whirl_s5_hint",
+        "reply": "whirl_s5_checked",
+        "choices": [
+          {
+            "label": "whirl_s5_a_c0",
+            "correct": true
+          },
+          {
+            "label": "whirl_s5_a_c1",
+            "correct": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "whirlpool-summary",
+      "place": "basin",
+      "scene": "draining",
+      "prompt": "whirl_s6_q",
+      "choices": [
+        {
+          "label": "whirl_s6_c0",
+          "correct": false
+        },
+        {
+          "label": "whirl_s6_c1",
+          "correct": false
+        },
+        {
+          "label": "whirl_s6_c2",
+          "correct": true
+        }
+      ],
+      "reply": "whirl_s6_reply",
+      "guide": {
+        "prompt": "whirl_s6_gq",
+        "hint": "whirl_s6_gh",
+        "choices": [
+          {
+            "label": "whirl_s6_g_c0",
+            "correct": false
+          },
+          {
+            "label": "whirl_s6_g_c1",
+            "correct": true
+          }
+        ]
+      },
+      "ai": {
+        "kind": "complete",
+        "place": "basin",
+        "text": "whirl_s6_ai",
+        "coach": "whirl_s6_coach",
+        "prompt": "whirl_s6_check",
+        "hint": "whirl_s6_hint",
+        "reply": "whirl_s6_checked",
+        "choices": [
+          {
+            "label": "whirl_s6_a_c0",
+            "correct": false
+          },
+          {
+            "label": "whirl_s6_a_c1",
+            "correct": true
+          }
+        ]
+      }
+    }
+  ],
+  "objects": [
+    {
+      "id": "basin",
+      "visual": "basin",
+      "label": "whirl_object",
+      "go": "whirl_go",
+      "x": 55,
+      "y": 85,
+      "button": [
+        83,
+        82
+      ],
+      "bounds": [
+        44,
+        92,
+        34,
+        95
+      ]
+    }
+  ],
+  "scenes": {
+    "still": {
+      "observations": {
+        "basin": "whirl_obs_still"
+      },
+      "effects": [
+        "basin"
+      ]
+    },
+    "draining": {
+      "observations": {
+        "basin": "whirl_obs_drain"
+      },
+      "effects": [
+        "basin"
+      ]
+    }
+  }
+}
